@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Mobile Web App Starter</title>
+    
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    
+    <!-- Include jQuery Mobile stylesheets -->
+    <link href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <link href="/css/themes/custom-theme.min.css" rel="stylesheet" />
+    <link href="/css/themes/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="/css/app.css" rel="stylesheet" />
+    
+    <!-- Include the jQuery library -->
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    
+    <!-- Include the jQuery Mobile library -->
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        <!--
+        $('div.ui-page').live("swipeleft", function(){
+            var nextpage = $(this).next('div[data-role="page"]');
+            if (nextpage.length > 0) {
+                $.mobile.changePage(nextpage, "slide", false, true);
+            }
+        });
+        $('div.ui-page').live("swiperight", function(){
+            var prevpage = $(this).prev('div[data-role="page"]');
+            if (prevpage.length > 0) {
+                $.mobile.changePage(prevpage, {transition: "slide",
+                    reverse: true}, true, true);
+            }
+        });
+        // -->
+    </script>
+</head>
+
+<body>
+    <div data-role="page" id="index" data-theme="a">
+        <div data-role="header" data-id="navbar" data-position="fixed">
+            <div class="logo">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a" style="width:70%"><h1><a href="index.html"><img src="images/logo.png" alt="Pizza Palace" />PIZZA PALACE</a></h1></div>
+                    <div class="ui-block-b" style="text-align:right;width:30%"><a href="tel:509-555-1212" data-role="button">CALL US</a></div>
+                </div>
+            </div>
+            <!-- DON'T USE THIS STYLE OF NAVIGATION
+            <div data-role="navbar">
+                <ul>
+                    <li><a class="ui-btn-active ui-state-persist" href="#home">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            -->
+        </div>
+
+        <div data-role="content">
+            <ul data-role="listview">
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+                <li>
+                    <a href="#order">Order</a>
+                </li>
+                <li>
+                    <a href="#location">Location</a>
+                </li>
+                <li>
+                    <a href="#about">About Us</a>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>Pizza Palace &copy; 2015</h4>
+        </div>
+    </div>
+
+    <div data-add-back-btn="true" data-role="page" id="home" data-theme="a">
+        <div data-add-back-btn="true" ui-state-persist data-role="header">
+            <h1>Pizza Palace</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <p>
+                    Welcome to Pizza Palace! This week's special is a family size Seafood Deluxe for only $14.99!
+                    The Seafood Deluxe comes loaded with shrimp, crab, oysters, zucchini, green peppers, red peppers,
+                    mushrooms, olives and pineapple. Our crust is a warm buttery dough of flaky goodness.
+                    Our sauce is made right here in our restaurant and we don't hold back on the cheese!
+                    If you haven't tried our pizza yet, you're missing out!
+                </p>
+                <div class="text-center" style="width:100%"><img src="images/pizza-special-1.jpg" /></div>
+            </div>
+            <div class="ui-grid-b text-center spacer">
+                <div class="ui-block-a quick-links"><img src="images/pizza-mobile.jpg" alt="Pizza" /></div>
+                <div class="ui-block-b quick-links"><img src="images/soda-mobile.jpg" alt="Soda" /></div>
+                <div class="ui-block-c quick-links"><img src="images/dessert-pizza-mobile.jpg" alt="Desert" /></div>
+            </div>
+            <div class="ui-body ui-body-a ui-corner-all spacer">
+                    <span class="bold">Today's Special</span><br />
+                    Seafood Deluxe for only $14.99!
+            </div>
+            <div class="ui-body ui-body-a ui-corner-all spacer">
+                <span class="bold">Delivery</span>
+                <br />We deliver to all of Spokane County.
+            </div>
+            <div class="ui-body ui-body-a ui-corner-all spacer">
+                <span class="bold">Contact Us</span><br />
+                <a href="tel:509-555-1212">(509) 555-1212</a><br />
+                <a href="mailto:pizzapalacecentral@gmail.com">palacec@gmail.com</a>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>Pizza Palace &copy; 2015</h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="menu" data-theme="a">
+        <div data-add-back-btn="true" ui-state-persist data-role="header">
+            <h1>Menu</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="ui-body ui-body-a ui-corner-all spacer">
+                <ul data-filter="true" data-filter-placeholder="Search...">
+                    <li>
+                        <img src="images/pizza-1.jpg" alt="Seafood Deluxe" />
+                        <p>
+                            <div class="bold">Seafood Deluxe</div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non ornare massa.
+                            Praesent lobortis luctus venenatis. Nullam magna ipsum, cursus in facilisis in,
+                            pulvinar quis nibh. Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                            Proin viverra mi sed sem mattis gravida. <div class="bold">$14.99</div>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/pizza-2.jpg" alt="Fiesta Pizza" />
+                        <p>
+                            <div class="bold">Fiesta Pizza</div>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non ornare massa.
+                            Praesent lobortis luctus venenatis. Nullam magna ipsum, cursus in facilisis in,
+                            pulvinar quis nibh. Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                            Proin viverra mi sed sem mattis gravida. <div class="bold">$9.99</div>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/pizza-3.jpg" alt="Meat Lovers" />
+                        <p>
+                        <div class="bold">Meat Lovers</div>
+                        Phasellus non ornare massa.
+                        Praesent lobortis luctus venenatis. Nullam magna ipsum, cursus in facilisis in,
+                        pulvinar quis nibh. Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                        Proin viverra mi sed sem mattis gravida. Nulla lectus enim, tristique ac commodo ac,
+                        semper eget quam. <div class="bold">$16.99</div>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/pizza-4.jpg" alt="Veggie Supreme" />
+                        <p>
+                        <div class="bold">Veggie Supreme</div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non ornare massa.
+                        Praesent lobortis luctus venenatis. Nullam magna ipsum, cursus in facilisis in,
+                        pulvinar quis nibh. Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                        Proin viverra mi sed sem mattis gravida. <div class="bold">$16.99</div>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/salad-1.jpg" alt="Caesar Salad" />
+                        <p>
+                        <div class="bold">Caesar Salad</div>
+                        Nullam magna ipsum, cursus in facilisis in,
+                        pulvinar quis nibh. Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                        Proin viverra mi sed sem mattis gravida. <div class="bold">$4.99</div>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/salad-3.jpg" alt="Chef Salad" />
+                        <p>
+                        <div class="bold">Chef Salad</div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non ornare massa.
+                        Praesent lobortis luctus venenatis. Nullam magna ipsum, cursus in facilisis in,
+                        pulvinar quis nibh. Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                        <div class="bold">$4.99</div>
+                        </p>
+                    </li>
+                    <li>
+                        <img src="images/salad-2.jpg" alt="Garden Salad" />
+                        <p>
+                        <div class="bold">Garden Salad</div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non ornare massa.
+                        Praesent lobortis luctus venenatis. Nullam magna ipsum, cursus in facilisis in,
+                        pulvinar quis nibh. Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                        <div class="bold">$4.99</div>
+                        </p>
+                    </li>
+                    <li>
+                        <h4>2 LITERS OF SODA $2.99 EA.</h4>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a text-center">
+                                <img src="images/coke.jpg" alt="Coca Cola" />
+                                <img src="images/sprite.jpg" alt="Sprite" />
+                            </div>
+                            <div class="ui-block-b text-center">
+                                <img src="images/pepsi.jpg" alt="Pepsi Cola" />
+                                <img src="images/rootBeer.jpg" alt="Root Beer" />
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button onclick="location.href='#order'">Order Now</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>Pizza Palace &copy; 2015</h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="order" data-theme="a">
+        <div data-add-back-btn="true" data-role="header">
+            <h1>Order</h1>
+        </div>
+
+        <div data-role="content">
+            <div id="orderMenu">
+                <div data-product="1" class="product">
+                    <span data-name="Seafood Deluxe" class="bold">Seafood Deluxe:</span>
+                    <span data-price="14.99" class="bold">$14.99</span><br />
+                    <span class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </span>
+                </div>
+                <div data-product="2" class="product">
+                    <span data-name="Fiesta Pizza" class="bold">Fiesta Pizza:</span>
+                    <span data-price="9.99" class="bold">$9.99</span><br />
+                    <span class="description">
+                        Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                    </span>
+                </div>
+                <div data-product="3" class="product">
+                    <span data-name="Meat Lovers" class="bold">Meat Lovers:</span>
+                    <span data-price="16.99" class="bold">$16.99</span><br />
+                    <span class="description">
+                        Phasellus non ornare massa. Praesent lobortis luctus venenatis.
+                    </span>
+                </div>
+                <div data-product="4" class="product">
+                    <span data-name="Veggie Supreme" class="bold">Veggie Supreme:</span>
+                    <span data-price="16.99" class="bold">$16.99</span><br />
+                    <span class="description">
+                        Nulla lectus enim, tristique ac commodo ac, semper eget quam.
+                    </span>
+                </div>
+                <div data-product="5" class="product">
+                    <span data-name="Caesar Salad" class="bold">Caesar Salad:</span>
+                    <span data-price="4.99" class="bold">$4.99</span><br />
+                    <span class="description">
+                        Integer leo est, fringilla ac vestibulum at, molestie a massa.
+                    </span>
+                </div>
+                <div data-product="6" class="product">
+                    <span data-name="Chef Salad" class="bold">Chef Salad:</span>
+                    <span data-price="4.99" class="bold">$4.99</span><br />
+                    <span class="description">
+                         Praesent lobortis luctus venenatis.
+                    </span>
+                </div>
+                <div data-product="7" class="product">
+                    <span data-name="Garden Salad" class="bold">Garden Salad:</span>
+                    <span data-price="4.99" class="bold">$4.99</span><br />
+                    <span class="description">
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </span>
+                </div>
+                <div data-product="8" class="product">
+                    <span data-name="Coca Cola" class="bold">2 ltr. Coca Cola:</span>
+                    <span data-price="2.99" class="bold">$2.99</span><br />
+                    <span class="description">
+                         Phasellus non ornare massa.
+                    </span>
+                </div>
+                <div data-product="9" class="product">
+                    <span data-name="Pepsi Cola" class="bold">2 ltr. Pepsi Cola:</span>
+                    <span data-price="2.99" class="bold">$2.99</span><br />
+                    <span class="description">
+                         Phasellus non ornare massa.
+                    </span>
+                </div>
+                <div data-product="10" class="product">
+                    <span data-name="Root Beer" class="bold">2 ltr. Root Beer:</span>
+                    <span data-price="2.99" class="bold">$2.99</span><br />
+                    <span class="description">
+                         Phasellus non ornare massa.
+                    </span>
+                </div>
+                <div data-product="11" class="product">
+                    <span data-name="Sprite" class="bold">2 ltr. Sprite:</span>
+                    <span data-price="2.99" class="bold">$2.99</span><br />
+                    <span class="description">
+                         Phasellus non ornare massa.
+                    </span>
+                </div>
+
+                <div id="cartDiv"></div>
+
+                <div>
+                    <button id="buy">Buy Now</button>
+                </div>
+                <div>
+                    <button id="saveOrder">Save Order</button>
+                </div>
+                <div>
+                    <button id="loadOrder">Load Order</button>
+                </div>
+            </div>
+            <div id="confirmation">
+                <p>
+                    <span class="bold">Thank you for your order!</span><br />
+                    Your order number is 5427. You will receive an email confirmation shortly.
+                </p>
+                <button id="back" onclick="location.href='index.html'">OK</button>
+            </div>
+            <script>
+                var vars = [], hash;
+                var q = document.URL.split('?')[1];
+                if(q != undefined){
+                    q = q.split('&');
+                    for(var i = 0; i < q.length; i++){
+                        hash = q[i].split('=');
+                        vars.push(hash[1]);
+                        vars[hash[0]] = hash[1];
+                    }
+                }
+                if(vars["confirm"] == "true"){
+                    $("#orderMenu").hide();
+                }else{
+                    $("#confirmation").hide();
+                }
+            </script>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>Pizza Palace &copy; 2015</h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="location" data-theme="a">
+        <div data-add-back-btn="true" ui-state-persist data-role="header">
+            <h1>Locations</h1>
+        </div>
+
+        <div data-role="content">
+            <p>
+                <script>
+                    navigator.geolocation.getCurrentPosition(function(pos){
+                        var lat = pos.coords.latitude;
+                        var lng = pos.coords.longitude;
+                        //console.log( lat + " : " + lng);
+                        //$("#lat").text(lat);
+                        //$("#lng").text(lng);
+                        //var url = '<a href="http://maps.google.com/maps?saddr=Pizza+Hut,+9998+North+Newport+Highway,+Spokane,+WA+99218&daddr=' + lat + ',' + lng + '">Your location</a>';
+                        //$("#url").html(url);
+
+                        //var map = '<iframe src="https://www.google.com/maps/embed?pb=!1m29!1m12!1m3!1d85903.9500798904!2d-117.38479729999993!3d47.71357435000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m14!1i0!3e6!4m5!1s0x549e1f3504ef9d27%3A0xa3a34ba54f12603e!2s2000+N+Greene+St%2C+Spokane%2C+WA+99217!3m2!1d47.6765219!2d-117.36367299999999!4m5!1s0x549e1c3fcc39efe5%3A0x6dd1ebb0a5240f4e!2sPizza+Hut%2C+9998+North+Newport+Highway%2C+Spokane%2C+WA+99218!3m2!1d47.749921!2d-117.400621!5e0!3m2!1sen!2sus!4v1426019205881" width="300" height="300" frameborder="0" style="border:0"></iframe>';
+                        var map = '<iframe width="325" height="325" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?geocode=FTh-1wIdzTAB-Q%3BFSGb2AId05sA-SFODySlsOvRbSnl7znMPxyeVDFODySlsOvRbQ&amp;saddr=' + lat + ',' + lng + '&amp;daddr=Pizza+Hut,+9998+North+Newport+Highway,+Spokane,+WA+99218&amp;ie=UTF8&amp;ll=47.736343,-117.392013&amp;spn=0,0&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?geocode=FTh-1wIdzTAB-Q%3BFSGb2AId05sA-SFODySlsOvRbSnl7znMPxyeVDFODySlsOvRbQ&amp;saddr=47.676984,-117.362483&amp;daddr=Pizza+Hut,+9998+North+Newport+Highway,+Spokane,+WA+99218&amp;ie=UTF8&amp;ll=47.736343,-117.392013&amp;spn=0,0&amp;t=m&amp;source=embed" style="color:#0000FF;text-align:left">View Larger Map</a></small>';
+                        $("#directionMap").html(map);
+                    })
+                </script>
+                <!--
+                Latitude: <span id="lat"></span><br />
+                Longitude: <span id="lng"></span><br />
+                Url: <span id="url"></span>
+                -->
+                <p>
+                    <span class="bold">Pizza Palace</span><br />
+                    9998 N Newport Hwy.<br />
+                    Spokane, WA 99218<br />
+                    <a href="tel:509-555-1212">(509) 555-1212</a>
+                </p>
+                <div id="directionMap"></div>
+            </p>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>Pizza Palace &copy; 2015</h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="about" data-theme="a">
+        <div data-add-back-btn="true" ui-state-persist data-role="header">
+            <h1>About Us</h1>
+        </div>
+
+        <div data-role="content">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Mauris sit amet dui lacus. Nam sed dolor in urna molestie
+                molestie non in eros. Duis malesuada nulla rutrum, ornare
+                lorem sit amet, sollicitudin enim. Cras eu risus vitae odio
+                lacinia fermentum ac quis nulla. In non malesuada dui.
+                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                Integer varius non augue ut rutrum.
+            </p>
+            <p>
+                Nunc ornare libero non dolor fermentum, eu iaculis erat sagittis.
+                Vivamus eget eros et lectus ultrices euismod et ac lorem.
+                Integer bibendum enim vel commodo imperdiet. Donec in justo
+                vel sapien posuere scelerisque at ut ligula. Cras augue augue,
+                ultrices eu tortor quis, euismod tincidunt lectus. Nam est leo,
+                cursus id leo a, tempus ullamcorper neque. Maecenas maximus
+                nisl odio, non feugiat libero bibendum quis.
+            </p>
+            <p>
+                Nunc pulvinar vel elit in sagittis. Ut dolor risus,
+                semper laoreet sodales faucibus, venenatis id tortor.
+                In ac elementum odio. Donec ac justo eros. Praesent congue
+                commodo ipsum, in rhoncus mauris congue sit amet.
+                Aliquam erat volutpat. Sed feugiat velit vitae quam tempor rhoncus.
+                Praesent porta ullamcorper facilisis. Ut dapibus,
+                massa aliquet ullamcorper malesuada, sem erat bibendum tellus,
+                sed eleifend urna orci in velit. Nulla mattis at elit ut dignissim.
+                Pellentesque tempor dapibus diam, vitae porta magna malesuada ac.
+                Nam ultrices ligula et libero posuere pharetra.
+            </p>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>Pizza Palace &copy; 2015</h4>
+        </div>
+    </div>
+    <script>
+        var cart = [];
+
+        function displayCart(){
+            var cartDiv = $("#cartDiv");
+            cartDiv.html("");
+            var grandTotal = 0;
+            var cartContent = "<table cellspacing=\"0\"><tr><th colspan=\"4\" class=\"cartHeader\">Shopping Cart</th></tr><tr><th align=\"left\" class=\"cartSubheader\">Item</th><th align=\"right\" class=\"cartSubheader\">Qty</th><th align=\"right\" class=\"cartSubheader\">Price</th><th align=\"right\" class=\"cartSubheader\">Total</th></tr>";
+            for(var item in cart){
+                var qty = cart[item].qty;
+                var price = cart[item].price;
+                var subtotal = qty * price;
+                grandTotal += subtotal
+                cartContent += "<tr><td>" + cart[item].name + "</td><td align=\"right\">" + qty + "</td><td align=\"right\">$" + price.toFixed(2) + "</td><td align=\"right\">$" + subtotal.toFixed(2) + "</td></tr>";
+            }
+            cartContent += "<tr><td colspan=\"2\" class=\"bold cartFooterLeft\">Grand Total</td><td colspan=\"2\" align=\"right\" class=\"bold cartFooterRight\">$" + grandTotal.toFixed(2) +  "</td></tr></table>";
+            cartDiv.append(cartContent);
+            $("#buy").show();
+            $("#saveOrder").show();
+        }
+
+        $(document).ready(function(){
+            if(jQuery.isEmptyObject(cart)){
+                $("#buy").hide();
+                $("#saveOrder").hide();
+            }
+
+            // Add a buy button to each pizza
+            $('div[data-product]').each(function(){
+                $(this).append('<button class="btnCart">Add to Cart</button>');
+            })
+
+            $('.btnCart').on("click", function(event){
+                var  pid = $(this).parent().data("product");
+                console.log(pid);
+                if(cart[pid]){
+                    cart[pid].qty += 1;
+                }else{
+                    cart[pid] = new Object();
+                    cart[pid].pid = pid;
+                    cart[pid].qty = 1;
+                    cart[pid].name = $(this).siblings("span").data("name");
+                    cart[pid].price = $(this).siblings("span").next().data("price");
+                }
+                displayCart();
+            })
+
+            $('#buy').on("click", function(event){
+                var buyUrl = "";
+                for(var item in cart){
+                    buyUrl += "&pid[]=" + item + "&qty[]=" + cart[item].qty + "&name[]=" + cart[item].name + "&price[]=" + cart[item].price;
+                }
+                $.getJSON('buy.php?' + buyUrl, function(data){
+                    $("#cartDiv").append(data);
+                });
+                //console.log("http://217-11.brandyv.com/buy.php?" + buyUrl);
+                $("#buy").hide();
+            })
+
+            $('#submit').on("click", function(event){
+                $.getJSON('purchase.php', function(data){
+                    $("#cartDiv").append(data);
+                });
+            })
+
+            $('#saveOrder').on("click", function(event){
+                var cartStr = "[";
+                for(var item in cart){
+                    cartStr += JSON.stringify(cart[item]) + ",";
+                }
+                cartStr = cartStr.slice(0,-1);
+                cartStr += "]";
+                console.log(cartStr);
+                localStorage['cart'] = cartStr;
+            })
+
+            $('#loadOrder').on("click", function(){
+                cart=[];
+                var obj = JSON.parse(localStorage['cart']);
+                for(var item in obj){
+                    pid = obj[item].pid;
+                    cart[pid] = obj[item];
+                }
+                displayCart();
+            })
+
+            //doesn't work... should I even use this functionality?
+            /*
+            $("body").bind("swipeleft swiperight", function(event){
+                var dir = event.type;
+                var page = $.mobile.activePage[0];
+                if(dir == "swiperight" && page.id == "home"){
+                    //$.mobile.changePage("menu");
+                    alert("dir = " + dir + " page " + page);
+                }
+            })
+            */
+        })
+    </script>
+</body>
+</html>
