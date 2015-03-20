@@ -32,7 +32,6 @@ $form = <<<END_OF_FORM
     <script>
         function submitForm(){
             var str = $("#orderForm").serialize();
-            console.log(str);
             $.ajax({
                 type: "POST",
                 url: "http://217-11.brandyv.com/phonegap/purchase.php",
