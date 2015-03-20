@@ -474,7 +474,7 @@
                 for(var item in cart){
                     buyUrl += "&pid[]=" + item + "&qty[]=" + cart[item].qty + "&name[]=" + cart[item].name + "&price[]=" + cart[item].price;
                 }
-                $.getJSON('buy.php?' + buyUrl, function(data){
+                $.getJSON('http://217-11.brandyv.com/phonegap/buy.php?' + buyUrl, function(data){
                     $("#cartDiv").append(data);
                 });
                 //console.log("http://217-11.brandyv.com/buy.php?" + buyUrl);
@@ -482,7 +482,7 @@
             })
 
             $('#submit').on("click", function(event){
-                $.getJSON('purchase.php', function(data){
+                $.getJSON('http://217-11.brandyv.com/phonegap/purchase.php', function(data){
                     $("#cartDiv").append(data);
                 });
             })
