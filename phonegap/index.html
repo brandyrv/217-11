@@ -17,6 +17,13 @@
     
     <!-- Include the jQuery Mobile library -->
     <script src="./js/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        $(document).bind("mobileinit", function(){
+            $.support.cors = true;
+            $.mobile.allowCrossDomainPages = true;
+        })
+    </script>
 </head>
 
 <body>
