@@ -1,4 +1,5 @@
 <?php
+
 $qty = explode(',', $_POST['qty']);
 $pid = explode(',', $_POST['pid']);
 $name = explode(',', $_POST['name']);
@@ -17,7 +18,7 @@ for ($i = 0; $i < count($pid); ++$i) {
     $order .= "</tr>";
 }
 
-$to = "brandyrb@hotmail.com";
+$to = "brandyrb@hotmail.com, brandy.vaughn@ccs.spokane.edu";
 $subject = "Thank you for your order!";
 
 $message = "
@@ -57,5 +58,6 @@ $headers .= 'Cc: brandyrv@gmail.com' . "\r\n";
 
 mail($to,$subject,$message,$headers);
 
-header("Location: http://217-11.brandyv.com/#order?confirm=true")
+echo json_encode("success");
+
 ?>

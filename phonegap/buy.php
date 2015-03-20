@@ -16,7 +16,7 @@ $price = implode(',', $_GET["price"]);
 
 //process some of the order here
 $form = <<<END_OF_FORM
-    <form method="post" action="purchase.php" data-ajax="false">
+    <form id="orderForm">
         <input type="hidden" name="qty" value="$qty" />
         <input type="hidden" name="pid" value="$pid" />
         <input type="hidden" name="name" value="$name" />
@@ -26,9 +26,28 @@ $form = <<<END_OF_FORM
             <div class="spacer">Address<br /><input type="text" name="address" /></div>
             <div class="spacer">Phone<br /><input type="text" name="phone" /></div>
             <div class="spacer">E-Mail<br /><input type="email" name="email" /></div>
-            <div class="spacer"><input class="submit" type="submit" name="submit" value="Submit Order" /></div>
+            <div class="spacer"><input class="submit" type="button" name="submit" id="submit" value="Submit Order" onclick="submitForm()" /></div>
         </div>
     </form>
+    <script>
+        function submitForm(){
+            var str = $("#orderForm").serialize();
+            console.log(str);
+            $.ajax({
+                type: "POST",
+                url: "purchase.php",
+                data: str,
+                dataType: "json",
+                success: function(response){
+                    $("#orderMenu").hide();
+                    $("#confirmation").show();
+                },
+                error: function(xhr, status, error){
+                    alert("xhr = " + xhr.responseText + " status = " + status + " error = " + error);
+                }
+            });
+        }
+    </script>
 END_OF_FORM;
 
 echo json_encode($form);

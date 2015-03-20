@@ -315,6 +315,7 @@
                 <button id="back" onclick="location.href='index.html'">OK</button>
             </div>
             <script>
+                /*
                 var vars = [], hash;
                 var q = document.URL.split('?')[1];
                 if(q != undefined){
@@ -330,6 +331,7 @@
                 }else{
                     $("#confirmation").hide();
                 }
+                */
             </script>
         </div>
 
@@ -444,6 +446,8 @@
         }
 
         $(document).ready(function(){
+            $("#confirmation").hide();
+
             if(jQuery.isEmptyObject(cart)){
                 $("#buy").hide();
                 $("#saveOrder").hide();
@@ -452,7 +456,7 @@
             // Add a buy button to each pizza
             $('div[data-product]').each(function(){
                 $(this).append('<button class="btnCart">Add to Cart</button>');
-            })
+            });
 
             $('.btnCart').on("click", function(event){
                 var  pid = $(this).parent().data("product");
@@ -467,25 +471,39 @@
                     cart[pid].price = $(this).siblings("span").next().data("price");
                 }
                 displayCart();
-            })
+            });
 
             $('#buy').on("click", function(event){
                 var buyUrl = "";
                 for(var item in cart){
                     buyUrl += "&pid[]=" + item + "&qty[]=" + cart[item].qty + "&name[]=" + cart[item].name + "&price[]=" + cart[item].price;
                 }
-                $.getJSON('http://217-11.brandyv.com/phonegap/buy.php?' + buyUrl, function(data){
+                $.getJSON('buy.php?' + buyUrl, function(data){
                     $("#cartDiv").append(data);
                 });
                 //console.log("http://217-11.brandyv.com/buy.php?" + buyUrl);
                 $("#buy").hide();
-            })
+            });
 
-            $('#submit').on("click", function(event){
-                $.getJSON('http://217-11.brandyv.com/phonegap/purchase.php', function(data){
-                    $("#cartDiv").append(data);
+            /*
+            $('#orderForm').submit(function(event){
+                event.preventDefault();
+                alert("hey");
+
+                $.ajax({
+                    type: "POST",
+                    url: "purchase.php",
+                    data: {qty: $("#qty").val()},
+                    dataType: 'json',
+                    success: function(result) {
+                        alert(result);
+                        $("#orderMenu").hide();
+                        $("#confirmation").show();
+                    }
                 });
-            })
+                return false;
+            });
+            */
 
             $('#saveOrder').on("click", function(event){
                 var cartStr = "[";
@@ -496,7 +514,7 @@
                 cartStr += "]";
                 //console.log(cartStr);
                 localStorage['cart'] = cartStr;
-            })
+            });
 
             $('#loadOrder').on("click", function(){
                 cart=[];
@@ -506,7 +524,7 @@
                     cart[pid] = obj[item];
                 }
                 displayCart();
-            })
+            });
 
             //doesn't work... should I even use this functionality?
             /*
