@@ -478,32 +478,12 @@
                 for(var item in cart){
                     buyUrl += "&pid[]=" + item + "&qty[]=" + cart[item].qty + "&name[]=" + cart[item].name + "&price[]=" + cart[item].price;
                 }
-                $.getJSON('buy.php?' + buyUrl, function(data){
+                $.getJSON('http://217-11.brandyv.com/phonegap/buy.php?' + buyUrl, function(data){
                     $("#cartDiv").append(data);
                 });
                 //console.log("http://217-11.brandyv.com/buy.php?" + buyUrl);
                 $("#buy").hide();
             });
-
-            /*
-            $('#orderForm').submit(function(event){
-                event.preventDefault();
-                alert("hey");
-
-                $.ajax({
-                    type: "POST",
-                    url: "purchase.php",
-                    data: {qty: $("#qty").val()},
-                    dataType: 'json',
-                    success: function(result) {
-                        alert(result);
-                        $("#orderMenu").hide();
-                        $("#confirmation").show();
-                    }
-                });
-                return false;
-            });
-            */
 
             $('#saveOrder').on("click", function(event){
                 var cartStr = "[";

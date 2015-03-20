@@ -35,7 +35,7 @@ $form = <<<END_OF_FORM
             console.log(str);
             $.ajax({
                 type: "POST",
-                url: "purchase.php",
+                url: "http://217-11.brandyv.com/phonegap/purchase.php",
                 data: str,
                 dataType: "json",
                 success: function(response){
