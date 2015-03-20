@@ -17,7 +17,7 @@ for ($i = 0; $i < count($pid); ++$i) {
     $order .= "</tr>";
 }
 
-$to = "brandyrb@hotmail.com, 217cis@gmail.com";
+$to = "brandyrb@hotmail.com";
 $subject = "Thank you for your order!";
 
 $message = "
