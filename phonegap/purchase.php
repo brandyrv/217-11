@@ -58,6 +58,7 @@ $headers .= 'Cc: brandyrv@gmail.com' . "\r\n";
 
 mail($to,$subject,$message,$headers);
 
-echo json_encode("success");
+//echo json_encode("success");
+echo "success";
 
 ?>

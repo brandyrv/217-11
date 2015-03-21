@@ -36,7 +36,7 @@ $form = <<<END_OF_FORM
                 type: "POST",
                 url: "http://217-11.brandyv.com/phonegap/purchase.php",
                 data: str,
-                dataType: "json",
+                dataType: "text",
                 success: function(response){
                     $("#orderMenu").hide();
                     $("#confirmation").show();
