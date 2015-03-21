@@ -21,7 +21,7 @@ for ($i = 0; $i < count($pid); ++$i) {
     $order .= "</tr>";
 }
 
-$to = "brandyrb@hotmail.com, brandy.vaughn@ccs.spokane.edu";
+$to = "brandyrb@hotmail.com, karen.kelly@scc.spokane.edu";
 $subject = "Thank you for your order!";
 
 $message = "
@@ -47,6 +47,7 @@ $message = "
                 </tr>
             </table>
         </p>
+        <p>I am not able to get the JSON form data in phonegap for some reason. The code works in the browser though.</p>
     </body>
 </html>
 ";

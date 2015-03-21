@@ -37,7 +37,6 @@ $form = <<<END_OF_FORM
                 url: "http://217-11.brandyv.com/phonegap/purchase.php",
                 data: str,
                 dataType: "json",
-                crossDomain: true,
                 success: function(response){
                     $("#orderMenu").hide();
                     $("#confirmation").show();
