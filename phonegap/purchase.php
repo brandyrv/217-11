@@ -1,9 +1,9 @@
 <?php
 
-$qty = explode(',', $_POST['qty']);
-$pid = explode(',', $_POST['pid']);
-$name = explode(',', $_POST['name']);
-$price = explode(',', $_POST['price']);
+$qty = explode(',', $_REQUEST['qty']);
+$pid = explode(',', $_REQUEST['pid']);
+$name = explode(',', $_REQUEST['name']);
+$price = explode(',', $_REQUEST['price']);
 
 $order = "";
 $grandTotal = 0;
@@ -27,7 +27,7 @@ $message = "
         <title>Pizza Palace Order</title>
     </head>
     <body>
-        <p>".$_POST["fullName"].", your order has been placed. We are firing up our ovens and processing your order now!</p>
+        <p>".$_REQUEST["fullName"].", your order has been placed. We are firing up our ovens and processing your order now!</p>
         <p>
             <strong>Order Number:</strong> 5427<br />
             <table style=\"width:300px\">
