@@ -1,5 +1,8 @@
 <?php
 
+header('content-type: application/json');
+header("access-control-allow-origin: *");
+
 $qty = explode(',', $_POST['qty']);
 $pid = explode(',', $_POST['pid']);
 $name = explode(',', $_POST['name']);
